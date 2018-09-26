@@ -1,62 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        body {
-            font-family: "Lato", sans-serif;
-        }
-
-        .sidenav {
-            height: 100%;
-            width: 160px;
-            position: fixed;
-            z-index: 1;
-            top: 0;
-            left: 0;
-            background-color: #111;
-            overflow-x: hidden;
-            padding-top: 20px;
-        }
-
-        .sidenav a {
-            padding: 6px 8px 6px 16px;
-            text-decoration: none;
-            font-size: 25px;
-            color: #818181;
-            display: block;
-        }
-
-        .sidenav a:hover {
-            color: #f1f1f1;
-        }
-
-        .main {
-            margin-left: 160px; /* Same as the width of the sidenav */
-            font-size: 28px; /* Increased text to enable scrolling */
-            padding: 0px 10px;
-        }
-
-        @media screen and (max-height: 450px) {
-            .sidenav {padding-top: 15px;}
-            .sidenav a {font-size: 18px;}
-        }
-    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
 
-<div class="sidenav">
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#clients">Clients</a>
-    <a href="#contact">Contact</a>
-</div>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">WebSiteName</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Page 1</a></li>
+            <li><a href="#">Page 2</a></li>
+            <li><a href="#">Page 3</a></li>
+        </ul>
+    </div>
+</nav>
 
-<div class="main">
-    <h2>Sidebar</h2>
-    <p>This sidebar is of full height (100%) and always shown.</p>
-    <p>Scroll down the page to see the result.</p>
+<div class="container">
+    <h1>Admin</h1>
+    {{--<h3>Basic Navbar Example</h3>--}}
+    {{--<p>A navigation bar is a navigation header that is placed at the top of the page.</p>--}}
+    @yield('content')
 </div>
+@yield('footer')
 
 </body>
 </html>
