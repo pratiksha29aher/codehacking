@@ -4,32 +4,54 @@
     <title>Bootstrap Example</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 </head>
 <body>
 
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#">WebSiteName</a>
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <!-- Brand -->
+            <a class="navbar-brand" href="#">Logo</a>
+
+            <!-- Links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link 1</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link 2</a>
+                </li>
+
+                <!-- Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                        User
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="{{route('users.index')}}">All User</a>
+                        <a class="dropdown-item" href="{{route('users.create')}}">Add User</a>
+                    </div>
+                </li>
+
+                <!-- Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                        Post
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="{{route('posts.index')}}">All Post</a>
+                        <a class="dropdown-item" href="{{route('posts.create')}}">Add Post</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <br>
+
+        <div class="container">
+            @yield('content')
         </div>
-        <ul class="nav navbar-nav">
-            <li class="active"><a href="{{route('users.index')}}">All User</a></li>
-            <li><a href="{{route('users.create')}}">Add User</a></li>
-            <li><a href="#">Page 2</a></li>
-            <li><a href="#">Page 3</a></li>
-        </ul>
-    </div>
-</nav>
-
-<div class="container">
-    {{--<h3>Basic Navbar Example</h3>--}}
-    {{--<p>A navigation bar is a navigation header that is placed at the top of the page.</p>--}}
-    @yield('content')
-</div>
-@yield('footer')
-
+            @yield('footer')
 </body>
 </html>
